@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  ecommerce-node-app-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-13T17:50:56.706862972-05:00"
+    description: A Helm chart for Kubernetes
+    digest: e3ba8037ad8e373f9c5b39f60c91e664d5b5e68f4f6558ec25b6f66cc39f6027
+    name: ecommerce-node-app-chart
+    type: application
+    urls:
+    - https://lily4499.github.io/helm-charts/ecommerce-node-app-chart-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-13T17:50:56.707059187-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 88f1b605e9f351f947ec98e605bb01e69a13c48bc3afd402f268174f0c8e5576
+    name: ecommerce-node-app-chart
+    type: application
+    urls:
+    - https://lily4499.github.io/helm-charts/helm-charts/ecommerce-node-app-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-13T17:50:56.706506415-05:00"

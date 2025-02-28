@@ -92,6 +92,57 @@ service:
   targetPort: 3000
 
 
+------------------------------------
+
+Otherwise, you can install from the local .tgz file.
+
+
+To install the chart with a custom release name (ecommerce-app):
+helm install ecommerce-app ecommerce-node-app-chart-0.1.0.tgz
+
+If you need to override values, pass a custom values.yaml file:
+helm install ecommerce-app -f my-values.yaml ecommerce-node-app-chart-0.1.0.tgz
+
+Check if the release is deployed:
+helm list
+
+Check Kubernetes resources:
+kubectl get pods,svc,deploy
+
+
+If you update the chart and want to apply changes:
+helm upgrade ecommerce-app ecommerce-node-app-chart-0.1.0.tgz
+
+To remove the deployment:
+helm uninstall ecommerce-app
+
+If using a LoadBalancer service:
+kubectl get svc ecommerce-app -o wide
+
+For port-forwarding (if using ClusterIP):
+kubectl port-forward svc/ecommerce-app 8080:80
+
+Check logs:
+kubectl logs -l app=ecommerce-app
+
+Describe pods for issues:
+kubectl describe pod -l app=ecommerce-app
+
+Customizing the Deployment
+Modify values.yaml to change configurations like:
+
+replicaCount: 2
+
+image:
+  repository: my-dockerhub-user/ecommerce-node-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+
+
 📜 License
 This repository and its charts are licensed under the MIT License.
 

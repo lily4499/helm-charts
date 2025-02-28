@@ -147,4 +147,29 @@ service:
 This repository and its charts are licensed under the MIT License.
 
 
+--------------------------------------------------
+
+ Using Helm to Inspect the Chart
+You can also use Helm to inspect the contents:
+
+Check chart metadata:
+helm show chart ecommerce-node-app-chart-0.1.0.tgz
+
+Check values.yaml:
+helm show values ecommerce-node-app-chart-0.1.0.tgz
+
+Check Kubernetes manifests (templates/ folder):
+helm template ecommerce-node-app-chart-0.1.0.tgz
+
+
+To see the files inside without extracting:
+tar -tzf ecommerce-node-app-chart-0.1.0.tgz
+
+To extract the chart contents into a directory:
+tar -xzf ecommerce-node-app-chart-0.1.0.tgz
+
+This creates a directory ecommerce-node-app/ containing all the chart files.
+
+
+
 

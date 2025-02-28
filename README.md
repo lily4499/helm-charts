@@ -71,18 +71,11 @@ kubectl describe pod -l app=ecommerce-app
 ⚙ Customizing Deployment
 Modify values.yaml to configure:
 
-Replica count
-Image repository and tag
-Service type (ClusterIP, NodePort, LoadBalancer)
-Ingress settings
-Environment variables
-
 Example:
-
 replicaCount: 2
 
 image:
-  repository: my-dockerhub-user/ecommerce-node-app
+  repository: {{ .Values.awsAccountId }}.dkr.ecr.us-east-1.amazonaws.com/my-ecr-repo
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -90,6 +83,10 @@ service:
   type: LoadBalancer
   port: 80
   targetPort: 3000
+
+#Pass AWS Account ID Using --set in CLI
+helm install my-app ./my-chart --set awsAccountId=$AWS_ACCOUNT_ID
+
 
 
 ------------------------------------

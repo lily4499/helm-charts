@@ -1,4 +1,3 @@
-Here's the README.md file in markdown format, ready for copy-paste into your GitHub repository.
 
 # Helm Charts Repository
 
